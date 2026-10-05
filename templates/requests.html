@@ -1,0 +1,18 @@
+<div class="container">
+<h2>Requests</h2>
+<table>
+<tr><th>User</th><th>Book</th><th>Status</th><th>Action</th></tr>
+{% for r in requests %}
+<tr>
+<td>{{r[1]}}</td>
+<td>{{r[2]}}</td>
+<td>{{r[3]}}</td>
+<td>
+{% if r[3]=='Pending' %}
+<a href="/approve/{{r[0]}}">Approve</a>
+{% endif %}
+</td>
+</tr>
+{% endfor %}
+</table>
+</div>
